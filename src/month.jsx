@@ -68,6 +68,12 @@ export default class Month extends React.PureComponent {
     this.month = utils.getMonth(props.day)
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if(this.props.day !== prevProps?.day) {
+      this.month = utils.getMonth(this.props.day)
+    }
+  }
+
   MONTH_REFS = [...Array(12)].map(() => React.createRef());
 
   isDisabled = date => utils.isDayDisabled(date, this.props);

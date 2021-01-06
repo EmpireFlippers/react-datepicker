@@ -2228,6 +2228,13 @@
     }
 
     _createClass(Month, [{
+      key: "componentDidUpdate",
+      value: function componentDidUpdate(prevProps, prevState) {
+        if (this.props.day !== (prevProps === null || prevProps === void 0 ? void 0 : prevProps.day)) {
+          this.month = getMonth__default['default'](this.props.day);
+        }
+      }
+    }, {
       key: "render",
       value: function render() {
         var _this$props6 = this.props,
