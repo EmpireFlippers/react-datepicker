@@ -36,7 +36,7 @@ export default class Week extends React.PureComponent {
     onDayMouseEnter: PropTypes.func,
     onWeekSelect: PropTypes.func,
     preSelection: PropTypes.instanceOf(Date),
-    // selected: PropTypes.instanceOf(Date),
+    selected: PropTypes.instanceOf(Date),
     // selectingDate: PropTypes.instanceOf(Date),
     // selectsEnd: PropTypes.bool,
     // selectsStart: PropTypes.bool,
@@ -129,7 +129,7 @@ export default class Week extends React.PureComponent {
             // selectingDate={this.props.selectingDate}
             filterDate={this.props.filterDate}
             preSelection={this.props.preSelection}
-            // selected={this.props.selected}
+            selected={this.props.selected}
             // selectsStart={this.props.selectsStart}
             // selectsEnd={this.props.selectsEnd}
             // selectsRange={this.props.selectsRange}

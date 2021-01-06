@@ -1963,8 +1963,8 @@ var Week = /*#__PURE__*/function (_React$PureComponent) {
           highlightDates: _this.props.highlightDates // selectingDate={this.props.selectingDate}
           ,
           filterDate: _this.props.filterDate,
-          preSelection: _this.props.preSelection // selected={this.props.selected}
-          // selectsStart={this.props.selectsStart}
+          preSelection: _this.props.preSelection,
+          selected: _this.props.selected // selectsStart={this.props.selectsStart}
           // selectsEnd={this.props.selectsEnd}
           // selectsRange={this.props.selectsRange}
           // startDate={this.props.startDate}
