@@ -244,7 +244,7 @@ export default class Day extends React.PureComponent {
   isOutsideMonth = () => {
     return (
       this.props.month !== undefined &&
-      this.props.month !== getMonth(this.props.day)
+      this.props.month !== getMonth(this.props.preSelection || this.props.day)
     );
   };
 

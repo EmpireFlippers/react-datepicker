@@ -1639,7 +1639,7 @@
       });
 
       _defineProperty(_assertThisInitialized(_this), "isOutsideMonth", function () {
-        return _this.props.month !== undefined && _this.props.month !== getMonth__default['default'](_this.props.day);
+        return _this.props.month !== undefined && _this.props.month !== getMonth__default['default'](_this.props.preSelection || _this.props.day);
       });
 
       _defineProperty(_assertThisInitialized(_this), "getClassNames", function (date) {

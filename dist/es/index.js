@@ -1638,7 +1638,7 @@ var Day = /*#__PURE__*/function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "isOutsideMonth", function () {
-      return _this.props.month !== undefined && _this.props.month !== getMonth(_this.props.day);
+      return _this.props.month !== undefined && _this.props.month !== getMonth(_this.props.preSelection || _this.props.day);
     });
 
     _defineProperty(_assertThisInitialized(_this), "getClassNames", function (date) {
