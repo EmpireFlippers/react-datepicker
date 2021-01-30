@@ -1638,7 +1638,15 @@ var Day = /*#__PURE__*/function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "isOutsideMonth", function () {
-      return _this.props.month !== undefined && _this.props.month !== getMonth(_this.props.preSelection || _this.props.day);
+      var month = getMonth(_this.props.day);
+      console.log("[DatePicker] [isOutsideMonth]", {
+        props: _this.props,
+        day: _this.props.day,
+        month: month,
+        preSelection: _this.props.preSelection,
+        monthProp: _this.props.month
+      });
+      return _this.props.month !== undefined && _this.props.month !== month;
     });
 
     _defineProperty(_assertThisInitialized(_this), "getClassNames", function (date) {
@@ -1949,7 +1957,7 @@ var Month = /*#__PURE__*/function (_React$PureComponent) {
 
     _classCallCheck(this, Month);
 
-    _this = _super.call(this, props);
+    _this = _super.call(this, props); // this.month = utils.getMonth(props.day)
 
     _defineProperty(_assertThisInitialized(_this), "MONTH_REFS", _toConsumableArray(Array(12)).map(function () {
       return /*#__PURE__*/React.createRef();
@@ -2222,18 +2230,15 @@ var Month = /*#__PURE__*/function (_React$PureComponent) {
       });
     });
 
-    _this.month = getMonth(props.day);
     return _this;
-  }
+  } // componentDidUpdate(prevProps, prevState) {
+  //   if(this.props.day !== prevProps?.day) {
+  //     this.month = utils.getMonth(this.props.day)
+  //   }
+  // }
+
 
   _createClass(Month, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
-      if (this.props.day !== (prevProps === null || prevProps === void 0 ? void 0 : prevProps.day)) {
-        this.month = getMonth(this.props.day);
-      }
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this$props6 = this.props,
@@ -2247,6 +2252,12 @@ var Month = /*#__PURE__*/function (_React$PureComponent) {
         onMouseLeave: this.handleMouseLeave,
         "aria-label": "".concat(ariaLabelPrefix, " ").concat(formatDate(day, "yyyy-MM"))
       }, showMonthYearPicker ? this.renderMonths() : showQuarterYearPicker ? this.renderQuarters() : this.renderWeeks());
+    }
+  }, {
+    key: "month",
+    get: function get() {
+      // console.log("[DatePicker] [getMonth]")
+      return getMonth(this.props.day);
     }
   }]);
 

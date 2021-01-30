@@ -65,13 +65,18 @@ export default class Month extends React.PureComponent {
 
   constructor(props) {
     super(props)
-    this.month = utils.getMonth(props.day)
+    // this.month = utils.getMonth(props.day)
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if(this.props.day !== prevProps?.day) {
-      this.month = utils.getMonth(this.props.day)
-    }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(this.props.day !== prevProps?.day) {
+  //     this.month = utils.getMonth(this.props.day)
+  //   }
+  // }
+  
+  get month(){
+    // console.log("[DatePicker] [getMonth]")
+    return utils.getMonth(this.props.day)
   }
 
   MONTH_REFS = [...Array(12)].map(() => React.createRef());

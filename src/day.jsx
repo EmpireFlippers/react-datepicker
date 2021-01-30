@@ -242,9 +242,11 @@ export default class Day extends React.PureComponent {
   };
 
   isOutsideMonth = () => {
+    const month = getMonth(this.props.day)
+    console.log("[DatePicker] [isOutsideMonth]", {props:this.props, day: this.props.day, month, preSelection: this.props.preSelection, monthProp: this.props.month})
     return (
       this.props.month !== undefined &&
-      this.props.month !== getMonth(this.props.preSelection || this.props.day)
+      this.props.month !== month
     );
   };
 
